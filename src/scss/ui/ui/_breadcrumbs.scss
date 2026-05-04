@@ -1,0 +1,57 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.breadcrumbs {
+  --container-inner-width: 1388px;
+
+  padding-block: functions.responsive-value(17, 5) functions.responsive-value(13, 15);
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+.breadcrumbs-nav {
+  // .breadcrumbs-nav__list
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+  }
+
+  // .breadcrumbs-nav__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &:not(:last-child) {
+      &::after {
+        content: ">";
+        font-family: variables.$font-manrope;
+        font-weight: 500;
+        color: variables.$color-ff5700;
+      }
+    }
+  }
+
+  // .breadcrumbs-nav__link
+  &__link {
+    &:not(&--current) {
+      color: variables.$color-ff5700;
+
+      @include mixins.prefers-reduced-motion {
+        transition-property: color;
+        transition-duration: 0.3s;
+      }
+
+      @include mixins.hover {
+        color: variables.$color-black;
+      }
+    }
+
+    // .breadcrumbs-nav__link--current
+    &--current {
+    }
+  }
+}
