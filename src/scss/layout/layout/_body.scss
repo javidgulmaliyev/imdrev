@@ -1,0 +1,9 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+body {
+  font-family: variables.$font-pt-serif;
+  font-size: functions.responsive-value(24, 16);
+  background-color: rgba(0, 181, 0, 0.05);
+}

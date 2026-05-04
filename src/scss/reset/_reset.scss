@@ -1,0 +1,68 @@
+@use "../mixins/mixins";
+@use "../variables/variables";
+
+* {
+  -webkit-tap-highlight-color: transparent;
+
+  box-sizing: border-box;
+  margin: unset;
+  padding: unset;
+  font: unset;
+  letter-spacing: unset;
+  word-spacing: unset;
+  text-transform: unset;
+  text-decoration: unset;
+  color: unset;
+  background: unset;
+  border: unset;
+  border-radius: unset;
+  outline: unset;
+  opacity: unset;
+}
+
+:where(body, html) {
+  inline-size: 100%;
+  block-size: 100%;
+  font-size: 16px;
+  text-size-adjust: 100%;
+}
+
+:where(:is(button, select):not(:disabled), label) {
+  cursor: pointer;
+}
+
+:where(ol, ul) {
+  list-style: none;
+}
+
+:where(html) {
+  scroll-padding-block-start: variables.$header-height;
+
+  @include mixins.prefers-reduced-motion {
+    interpolate-size: allow-keywords;
+    scroll-behavior: smooth;
+  }
+}
+
+:where(img) {
+  vertical-align: top;
+}
+
+:where(svg) {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+:where(:focus-visible:not(input, select, textarea)) {
+  outline: 2px solid var(--outline-color, currentColor);
+  outline-offset: 2px;
+
+  @include mixins.hover {
+    outline: none;
+  }
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
