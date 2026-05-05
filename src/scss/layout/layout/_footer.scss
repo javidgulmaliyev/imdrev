@@ -6,6 +6,7 @@
   --container-inner-width: 974px;
 
   padding-block: 55px;
+  font-family: variables.$font-gotham-pro;
   text-wrap: balance;
   background-color: variables.$color-white;
 
@@ -121,7 +122,7 @@
   &__a {
     text-decoration: underline dashed;
     text-decoration-skip-ink: none;
-    text-underline-offset: 5px;
+    text-underline-offset: 2px;
     color: variables.$color-ff5700;
 
     @include mixins.prefers-reduced-motion {
