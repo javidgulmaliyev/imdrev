@@ -1,0 +1,95 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.similar {
+  padding-block: functions.responsive-value(17, 8) functions.responsive-value(50, 25);
+
+  // .similar__title
+  &__title {
+    margin-block-end: functions.responsive-value(33, 5);
+  }
+}
+
+.similar-slider {
+  border-radius: 20px;
+
+  // .similar-slider__wrapper
+  &__wrapper {
+  }
+
+  // .similar-slider__slide
+  &__slide {
+  }
+}
+
+.similar-card {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  aspect-ratio: 550 / 385;
+  padding-block: functions.responsive-value(17, 11) functions.responsive-value(25, 16);
+  padding-inline: functions.responsive-value(24, 16);
+  background-color: variables.$color-white;
+  border-radius: 20px;
+  overflow: hidden;
+
+  // .similar-card__title
+  &__title {
+    inline-size: 100%;
+    font-family: variables.$font-pf-agora-slab-pro;
+    font-size: functions.responsive-value(24, 16);
+    text-align: center;
+    text-wrap: balance;
+    background-color: rgba(variables.$color-white, 0.5);
+    backdrop-filter: blur(5px);
+    transform: translateZ(0);
+
+    @media (hover) {
+      .similar-card:has(.similar-card__link:hover) & {
+        color: variables.$color-ff5700;
+      }
+
+      @include mixins.prefers-reduced-motion {
+        transition-property: color;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+
+  // .similar-card__link
+  &__link {
+    flex: 0 0 auto;
+    font-size: 0;
+    color: variables.$color-ff5700;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    svg {
+      width: functions.responsive-value(25, 16);
+      height: functions.responsive-value(25, 16);
+    }
+  }
+
+  // .similar-card__image
+  &__image {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    z-index: -1;
+    aspect-ratio: 550 / 322;
+    background-color: variables.$color-white;
+
+    img {
+      object-fit: contain;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.h2 {
+  font-family: variables.$font-pf-agora-slab-pro;
+  font-size: functions.responsive-value(48, 16);
+  line-height: 1.08;
+}
