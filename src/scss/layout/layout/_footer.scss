@@ -1,0 +1,136 @@
+@use "../../functions/functions";
+@use "../../mixins/mixins";
+@use "../../variables/variables";
+
+.footer {
+  --container-inner-width: 974px;
+
+  padding-block: 55px;
+  text-wrap: balance;
+  background-color: variables.$color-white;
+
+  > *:last-child {
+    margin-block-end: 0;
+  }
+
+  // .footer__address
+  &__address {
+    margin-block-end: 15px;
+  }
+
+  // .footer__links
+  &__links {
+    margin-block-end: 15px;
+  }
+
+  // .footer__info
+  &__info {
+    font-size: 12px;
+    line-height: calc(14 / 12);
+  }
+}
+
+.footer-address {
+  font-size: 17px;
+
+  // .footer-address__list
+  &__list {
+  }
+
+  // .footer-address__item
+  &__item {
+    &:not(:last-child) {
+      margin-block-end: 15px;
+    }
+  }
+
+  // .footer-address__label
+  &__label {
+    display: inline;
+    font-size: 15px;
+    line-height: calc(23 / 15);
+
+    &::after {
+      content: " ";
+    }
+  }
+
+  // .footer-address__text
+  &__text {
+    display: inline;
+  }
+
+  // .footer-address__link
+  &__link {
+    text-decoration: underline;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-ff5700;
+    }
+  }
+
+  // .footer-address__tel
+  &__tel {
+    white-space: nowrap;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-ff5700;
+    }
+  }
+
+  // .footer-address__mail
+  &__mail {
+    text-decoration: underline dashed;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 5px;
+    white-space: nowrap;
+    color: variables.$color-ff5700;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-black;
+    }
+  }
+}
+
+.footer-links {
+  font-size: 17px;
+
+  // .footer-links__item
+  &__item {
+    &:not(:last-child) {
+      margin-block-end: 15px;
+    }
+  }
+
+  // .footer-links__a
+  &__a {
+    text-decoration: underline dashed;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 5px;
+    color: variables.$color-ff5700;
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-black;
+    }
+  }
+}
