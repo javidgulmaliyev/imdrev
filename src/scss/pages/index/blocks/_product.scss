@@ -249,6 +249,8 @@
 }
 
 .product-button {
+  --outline-color: #{variables.$color-black};
+
   display: flex;
   align-items: center;
   justify-content: center;
