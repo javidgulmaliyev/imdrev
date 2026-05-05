@@ -60,6 +60,21 @@
     }
   }
 
+  // .similar-card__image
+  &__image {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    z-index: -1;
+    aspect-ratio: 550 / 322;
+    font-size: 0;
+    background-color: variables.$color-white;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
   // .similar-card__link
   &__link {
     flex: 0 0 auto;
@@ -76,20 +91,6 @@
     svg {
       width: functions.responsive-value(25, 16);
       height: functions.responsive-value(25, 16);
-    }
-  }
-
-  // .similar-card__image
-  &__image {
-    position: absolute;
-    inset-block-end: 0;
-    inset-inline: 0;
-    z-index: -1;
-    aspect-ratio: 550 / 322;
-    background-color: variables.$color-white;
-
-    img {
-      object-fit: contain;
     }
   }
 }

@@ -165,6 +165,7 @@
   &__image {
     display: block;
     block-size: 100%;
+    font-size: 0;
     background-color: variables.$color-white;
     border-radius: 25px;
 
@@ -196,6 +197,7 @@
   // .product-thumbs__slide
   &__slide {
     aspect-ratio: 1 / 1;
+    font-size: 0;
     border: 2px solid rgba(variables.$color-ff5700, 0);
     border-radius: 25px;
     cursor: pointer;
